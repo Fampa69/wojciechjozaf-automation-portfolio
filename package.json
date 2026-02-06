@@ -1,0 +1,18 @@
+{
+  "name": "wojciechjozaf-automation-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of my automation skills",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fampa69/wojciechjozaf-automation-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fampa69/wojciechjozaf-automation-portfolio/issues"
+  },
+  "homepage": "https://github.com/Fampa69/wojciechjozaf-automation-portfolio#readme"
+}
