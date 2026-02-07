@@ -13,5 +13,5 @@ test("It should enter the website", async({page}) => {
 test("It should be able to log into the user", async({page}) => {
     const LoginFunction = new LoginPage(page)
     await LoginFunction.login("test1234","password");
-    await expect(page.getByTestId("user-name")).toHaveText("JanDemobankowy");
+    await expect(page.getByTestId("user-name")).toHaveText("Jan Demobankowy");
 })
