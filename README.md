@@ -13,8 +13,6 @@ The core destination of this project is to showcase professional-grade test auto
 
     Reporting: Allure Report / Playwright HTML Report 📊
 
-    CI/CD: GitHub Actions integration ⚙️
-
 ✨ Key Features & Patterns implemented:
 
     Page Object Model (POM): Full abstraction of UI elements from test logic.
@@ -26,8 +24,6 @@ The core destination of this project is to showcase professional-grade test auto
     API Testing: Integrated REST API checks within the UI flow to ensure data integrity.
 
     Parallel Execution: Configured for maximum speed without losing stability.
-
-    Custom Utilities: Helper functions for common actions like waiting, logging, or state handling.
 
 🚀 Quick Start
 
