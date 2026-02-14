@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../../../pages/demobank_login.page";
 import { TransferPage } from "../../../pages/demobank_transfer.page";
+import { transferData } from "../../../testdata/transfer.data";
 
 test.beforeEach(async ({ page }) => {
   await page.goto("https://demo-bank.vercel.app/");
@@ -11,11 +12,13 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Positive Route Test Cases for Transfer Actions", () => {
+    //arrange
+    const transferAmount = transferData.cashAmount;
+    const transferTitle = transferData.title;
+
     test("It should be able to send fast transfer and validate dialogue's text", async ({ page }) => {
         //arrange
-        const transferAmount = "400";
-        const transferTitle = "Testing Transfer Title";
-        const transferReceiver = "Chuck Demobankowy";
+        const transferReceiver = transferData.receiverChuck;
         const transferPage = new TransferPage(page)
         const doButton = transferPage.doButton;
         const transferDialog = transferPage.transferDialog;
@@ -33,9 +36,7 @@ test.describe("Positive Route Test Cases for Transfer Actions", () => {
 
     test("It should be able to validate website's notification after sending fast transfer", async ({page}) => {
         //arrange
-        const transferAmount = "600";
-        const transferTitle = "Another Transfer Title for Validation";
-        const transferReceiver = "Jan Demobankowy";
+        const transferReceiver = transferData.receiverJan;
         const transferPage = new TransferPage(page) 
         const doButton = transferPage.doButton;
         const closeButton = transferPage.closeButton;
@@ -52,10 +53,12 @@ test.describe("Positive Route Test Cases for Transfer Actions", () => {
 })
 
 test.describe("Negative Route Test Cases for Transfer actions", () => {
+    //arrange
+    const transferAmount = transferData.cashAmount;
+    const transferTitle = transferData.title;
+
     test("It should notificate user when transer receiver has not been selected", async({page}) =>{
         //arrange
-        const transferAmount = "600";
-        const transferTitle = "Another Transfer Title for Validation";
         const transferPage = new TransferPage(page)
         const doButton = transferPage.doButton;
         const errorTransferReceiver =  transferPage.errorTransferReceiver;
@@ -70,7 +73,6 @@ test.describe("Negative Route Test Cases for Transfer actions", () => {
 
     test("It should notificate user when transfer amount has not been provided", async({page}) =>{
         //arrange
-        const transferTitle = "Another Transfer Title for Validation";
         const transferPage = new TransferPage(page)
         const doButton = transferPage.doButton; 
         const errorTransferMessage = transferPage.errorTransferMessage;
@@ -85,7 +87,6 @@ test.describe("Negative Route Test Cases for Transfer actions", () => {
 
     test("It should notificate user when transer title has not been selected", async({page}) =>{
         //arrange
-        const transferAmount = "600";
         const transferPage = new TransferPage(page)
         const doButton = transferPage.doButton; 
         const errorTransferTitle = transferPage.errorTransferTitle;
