@@ -14,6 +14,7 @@ export class TransferPage{
     readonly errorTransferReceiver: Locator;
 
     constructor(page: Page){
+
         this.amountBox = page.locator('#widget_1_transfer_amount');
         this.titleBox = page.locator('#widget_1_transfer_title');
         this.receiverBox = page.locator('#widget_1_transfer_receiver');
@@ -32,5 +33,6 @@ export class TransferPage{
         await this.titleBox.fill(title);
         await this.receiverBox.selectOption(receiver);
     }   
+
 
 }
