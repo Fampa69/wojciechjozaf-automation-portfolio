@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import {LoginPage} from "../../../pages/demobank_login"
+import { LoginPage } from '../../../pages/demobank_login.page.ts';
 
 test.beforeEach(async ({ page }) => {
   await page.goto("https://demo-bank.vercel.app/");
