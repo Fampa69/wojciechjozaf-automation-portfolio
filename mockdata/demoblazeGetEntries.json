@@ -1,0 +1,23 @@
+{
+  "Items": [
+    {
+      "cat": "phone",
+      "desc": "Mocked Phone Lorem Ipsum",
+      "id": 1,
+      "img": "imgs/Nexus_6.jpg",
+      "price": 1337.0,
+      "title": "Super Mocked Phone ProXL 10"
+    },
+    {
+        "cat": "phone",
+        "desc": "Phone for testing purposes",
+        "id": 2,
+        "img": "imgs/iphone_6.jpg",
+        "price": 4350.0,
+        "title": "TPhone 17 Pro"
+    }
+  ],
+  "LastEvaluatedKey": {
+    "id": "2"
+  }
+}

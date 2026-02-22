@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/Fampa69/wojciechjozaf-automation-portfolio#readme",
   "devDependencies": {
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.0"
   }
 }
