@@ -19,12 +19,10 @@ test.describe("Basic API Request Tests", () => {
         expect(body.title).toBe("Book 1");
     });
 
-    test.only("It should validate POST API response", async ({ request }) => {
+    test("It should validate POST API response", async ({ request }) => {
         //arrange 
         const postAPIResponse = await request.post("api/v1/Books", {
-            data: {
-                json: booksPostRequestBody
-            }
+            data: booksPostRequestBody
         });
 
         //act

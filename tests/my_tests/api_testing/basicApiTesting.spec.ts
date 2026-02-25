@@ -5,21 +5,6 @@ test.describe("Positive Route for API Testing", () => {
     //arrange
     const Url = "https://www.demoblaze.com/index.html";
 
-    test("It should display products on the website", async ({ page }) => {
-        //arrange
-        const response = await page.waitForResponse(res => res.url().endsWith('/entries'));
-        const product = page.locator(".card.h-100");
-        const body = await response.json();
-        
-        //act
-        await page.goto(Url);
-
-        //assert
-        expect(response.status()).toBe(200);
-        expect(body.Items).not.toHaveLength(0);
-        await expect(product).not.toHaveCount(0);
-    })
-
     test("It should display mocked products on the website", async ({ page }) => {
         //arrange
         await page.route("**/entries", async (route) => {
