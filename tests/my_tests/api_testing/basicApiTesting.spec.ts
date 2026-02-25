@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import mockEntries from '../../demoblazeEntries.json';
+import mockEntries from '../../mockdata/demoblazeEntries.json';
 
 test.describe("Positive Route for API Testing", () => {
     //arrange
