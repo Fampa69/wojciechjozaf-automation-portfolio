@@ -4,11 +4,15 @@ import { TransferPage } from "../../../pages/demobank_transfer.page";
 import { transferData } from "../../../testdata/transfer.data";
 
 test.beforeEach(async ({ page }) => {
+    //arrange
+    const tranfserPage = new TransferPage(page);
+    const loginButton = tranfserPage.loginButton;
+    //act
   await page.goto("https://demo-bank.vercel.app/");
   await expect(page).toHaveURL("https://demo-bank.vercel.app/");
   const LoginFunction = new LoginPage(page);
   await LoginFunction.login("test1234", "password");
-  await page.getByRole("button", { name: "zaloguj się" }).click();
+  await loginButton.click();
 });
 
 test.describe("Positive Route Test Cases for Transfer Actions", () => {

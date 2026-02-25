@@ -12,6 +12,7 @@ export class TransferPage{
     readonly errorTransferMessage: Locator;
     readonly errorTransferTitle: Locator;
     readonly errorTransferReceiver: Locator;
+    readonly loginButton: Locator;
 
     constructor(page: Page){
 
@@ -25,6 +26,7 @@ export class TransferPage{
         this.errorTransferMessage = page.getByTestId("error-widget-1-transfer-amount");
         this.errorTransferTitle = page.getByTestId("error-widget-1-transfer-title");
         this.errorTransferReceiver = page.getByTestId("error-widget-1-transfer-receiver");
+        this.loginButton = page.getByRole('button', { name: 'Zaloguj się' });
 
     }
     
