@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import booksPostRequestBody from '../../mockdata/booksFakeRestApiPostRequest.json';
 
 test.describe("Basic API Request Tests", () => {
     //arrange
@@ -22,11 +23,7 @@ test.describe("Basic API Request Tests", () => {
         //arrange 
         const postAPIResponse = await request.post("api/v1/Books", {
             data: {
-                "title": "Testing Book Title",
-                "description": "Testing Book Description",
-                "pageCount": 1337,
-                "excerpt": "string",
-                "publishDate": "1988-02-25T14:14:50.130Z"
+                json: booksPostRequestBody
             }
         });
 
